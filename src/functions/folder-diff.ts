@@ -1,4 +1,3 @@
-import { boolean } from '@oclif/parser/lib/flags'
 import { promisify } from 'util'
 const exec = promisify(require('child_process').exec)
 
