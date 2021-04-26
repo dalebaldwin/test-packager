@@ -11,22 +11,25 @@ export default class GitDiff extends Command {
     // branch: flags.string({ char: "b", description: "target branch" }),
   }
 
-  static args = [{ name: 'branch' }, { name: 'target branch' }]
+  static args = [{ name: 'branch' }]
 
   async run() {
     const { args, flags } = this.parse(GitDiff)
     console.log(args)
     // git diff --dirstat=files,0 HEAD~1
-    exec(`git diff --name-only HEAD~1 | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq`, (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`)
-        return
+    exec(
+      `git diff ${args.branch} --name-only | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq`,
+      (error, stdout, stderr) => {
+        if (error) {
+          console.log(`error: ${error.message}`)
+          return
+        }
+        if (stderr) {
+          console.log(`stderr: ${stderr}`)
+          return
+        }
+        console.log(stdout.split('\n'))
       }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`)
-        return
-      }
-      console.log(stdout.split('\n'))
-    })
+    )
   }
 }
