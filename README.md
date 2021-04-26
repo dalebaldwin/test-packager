@@ -28,28 +28,28 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`test-packager hello [FILE]`](#test-packager-hello-file)
+* [`test-packager diff BRANCH`](#test-packager-diff-branch)
 * [`test-packager help [COMMAND]`](#test-packager-help-command)
 
-## `test-packager hello [FILE]`
+## `test-packager diff BRANCH`
 
-describe the command here
+Git the git diff between this branch and the target branch
 
 ```
 USAGE
-  $ test-packager hello [FILE]
+  $ test-packager diff BRANCH
+
+ARGUMENTS
+  BRANCH  [default: main] branch to diff against
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 
 EXAMPLE
-  $ test-packager hello
-  hello world from ./src/hello.ts!
+  $ test-packager branch
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/diff.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.0/src/commands/diff.ts)_
 
 ## `test-packager help [COMMAND]`
 
