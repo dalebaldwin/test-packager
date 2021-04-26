@@ -1,5 +1,5 @@
 import { Command, flags } from '@oclif/command'
-import { exec } from 'child_process'
+import diffOutput from '../functions/folderDiff'
 
 export default class GitDiff extends Command {
   static description = 'Git the git diff between this branch and the target branch'
@@ -14,22 +14,7 @@ export default class GitDiff extends Command {
 
   async run() {
     const { args, flags } = this.parse(GitDiff)
-
-    exec(
-      `git diff ${args.branch} --name-only | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq`,
-      (error, stdout, stderr) => {
-        if (error) {
-          console.log(`error: ${error.message}`)
-          return
-        }
-        if (stderr) {
-          console.log(`stderr: ${stderr}`)
-          return
-        }
-        const folders = stdout.split('\n')
-        const filtered = folders.filter(Boolean)
-        console.log(filtered)
-      }
-    )
+    const diff = await diffOutput(args.branch)
+    console.log(diff)
   }
 }
