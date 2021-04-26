@@ -4,19 +4,17 @@ import { exec } from 'child_process'
 export default class GitDiff extends Command {
   static description = 'Git the git diff between this branch and the target branch'
 
-  static examples = [`$ test-packager`]
+  static examples = [`$ test-packager branch`]
 
   static flags = {
     help: flags.help({ char: 'h' })
-    // branch: flags.string({ char: "b", description: "target branch" }),
   }
 
-  static args = [{ name: 'branch' }]
+  static args = [{ name: 'branch', description: 'branch to diff against', required: true, default: 'main' }]
 
   async run() {
     const { args, flags } = this.parse(GitDiff)
-    console.log(args)
-    // git diff --dirstat=files,0 HEAD~1
+
     exec(
       `git diff ${args.branch} --name-only | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq`,
       (error, stdout, stderr) => {
@@ -28,7 +26,9 @@ export default class GitDiff extends Command {
           console.log(`stderr: ${stderr}`)
           return
         }
-        console.log(stdout.split('\n'))
+        const folders = stdout.split('\n')
+        const filtered = folders.filter(Boolean)
+        console.log(filtered)
       }
     )
   }
