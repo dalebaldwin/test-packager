@@ -19,7 +19,11 @@
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",
     "eslint-config-oclif-typescript": "^0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-no-only-tests": "^2.5.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "globby": "^10",
+    "prettier": "^2.2.1",
     "ts-node": "^8",
     "typescript": "^3.3"
   },
@@ -51,6 +55,7 @@
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
+    "lint": "eslint . --ext .ts --config .eslintrc",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
