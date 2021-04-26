@@ -1,7 +1,22 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  node: circleci/node@4.1
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:12.18.2
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run Deploy
+          command: |
+            yarn lint
+
 workflows:
   node-tests:
     jobs:
-      - node/test
+      - lint
