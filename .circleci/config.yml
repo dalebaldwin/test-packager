@@ -27,7 +27,7 @@ jobs:
             echo "Hello World"
 
 workflows:
-  node-tests:
+  pr:
     jobs:
       - lint
       - unit
