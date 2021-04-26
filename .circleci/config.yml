@@ -6,7 +6,6 @@ jobs:
   lint:
     docker:
       - image: cimg/node:12.18.2
-    executor: aws-cli/default
     steps:
       - checkout
       - node/install-packages:
