@@ -27,7 +27,7 @@ jobs:
             echo "Hello World"
 
 workflows:
-  pr:
+  pull-request:
     jobs:
       - lint
       - unit
