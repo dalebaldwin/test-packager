@@ -26,7 +26,7 @@ export default class GitDiff extends Command {
         console.log(`stderr: ${stderr}`)
         return
       }
-      console.log(`stdout: ${stdout.split('\n')}`)
+      console.log(stdout)
     })
   }
 }
