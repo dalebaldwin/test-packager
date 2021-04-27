@@ -2,7 +2,7 @@ import { Command, flags } from '@oclif/command'
 import diffOutput from '../functions/folder-diff'
 
 export default class GitDiff extends Command {
-  static description = 'Git the git diff between this branch and the target branch'
+  static description = 'Get the git diff between this branch and the target branch'
 
   static examples = ['$ test-packager branch']
 
