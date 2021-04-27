@@ -1,6 +1,6 @@
 import { Command, flags } from '@oclif/command'
 import diffOutput from '../functions/folder-diff'
-import execCallback from '../functions/execute-fallback'
+import execCallback from '../functions/execute-callback'
 
 export default class Callback extends Command {
   static description = 'Get folder change list and pass in values to a callback'
@@ -14,7 +14,7 @@ export default class Callback extends Command {
   }
 
   static args = [
-    { name: 'branch', description: 'branch to diff against', required: true, default: 'main' },
+    { name: 'branch', description: 'branch to diff against', required: true },
     { name: 'callback', description: 'callback to run' }
   ]
 
