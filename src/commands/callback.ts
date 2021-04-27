@@ -10,7 +10,8 @@ export default class Callback extends Command {
   static flags = {
     help: flags.help({ char: 'h' }),
     comma: flags.boolean({ char: 'c', description: 'split folder paths by comma' }),
-    space: flags.boolean({ char: 's', description: 'split folder paths by space' })
+    space: flags.boolean({ char: 's', description: 'split folder paths by space' }),
+    includeRoot: flags.boolean({ char: 'i', description: 'include root directory in output', default: false })
   }
 
   static args = [
@@ -20,7 +21,7 @@ export default class Callback extends Command {
 
   async run() {
     const { args, flags } = this.parse(Callback)
-    const diff = await diffOutput(args.branch)
+    const diff = await diffOutput(args.branch, flags.includeRoot)
     const fileListComma = diff.toString()
     const fileListSpace = diff.join(' ')
 

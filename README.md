@@ -1,8 +1,8 @@
 ### Test Packager
 
-=============
-
 Package up your tests based on changes in your project. This tool will find the folders with changes and allows you to pass that information into your test commands to narrow down tests to only the ones that relate to your changes.
+
+=============
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/test-packager.svg)](https://npmjs.org/package/test-packager)
@@ -10,13 +10,15 @@ Package up your tests based on changes in your project. This tool will find the 
 [![License](https://img.shields.io/npm/l/test-packager.svg)](https://github.com/dalebaldwin/test-packager/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g test-packager
 $ test-packager COMMAND
@@ -28,14 +30,16 @@ USAGE
   $ test-packager COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`test-packager callback BRANCH [CALLBACK]`](#test-packager-callback-branch-callback)
-* [`test-packager diff BRANCH`](#test-packager-diff-branch)
-* [`test-packager help [COMMAND]`](#test-packager-help-command)
+
+- [`test-packager callback BRANCH [CALLBACK]`](#test-packager-callback-branch-callback)
+- [`test-packager diff BRANCH`](#test-packager-diff-branch)
+- [`test-packager help [COMMAND]`](#test-packager-help-command)
 
 ## `test-packager callback BRANCH [CALLBACK]`
 
@@ -96,4 +100,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
 <!-- commandsstop -->
