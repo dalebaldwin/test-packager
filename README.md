@@ -10,56 +10,55 @@ Package up your tests based on changes in your project. This tool will find the 
 [![License](https://img.shields.io/npm/l/test-packager.svg)](https://github.com/dalebaldwin/test-packager/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g test-packager
 $ test-packager COMMAND
 running command...
 $ test-packager (-v|--version|version)
-test-packager/0.0.0 darwin-x64 node-v12.18.2
+test-packager/0.0.2 darwin-x64 node-v12.18.2
 $ test-packager --help [COMMAND]
 USAGE
   $ test-packager COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
+* [`test-packager callback BRANCH [CALLBACK]`](#test-packager-callback-branch-callback)
+* [`test-packager diff BRANCH`](#test-packager-diff-branch)
+* [`test-packager help [COMMAND]`](#test-packager-help-command)
 
-- [`test-packager callback BRANCH`](#test-packager-callback-branch)
-- [`test-packager diff BRANCH`](#test-packager-diff-branch)
-- [`test-packager help [COMMAND]`](#test-packager-help-command)
-
-## `test-packager callback BRANCH`
+## `test-packager callback BRANCH [CALLBACK]`
 
 Get folder change list and pass in values to a callback
 
 ```
 USAGE
-  $ test-packager callback BRANCH
+  $ test-packager callback BRANCH [CALLBACK]
 
 ARGUMENTS
-  BRANCH  [default: main] branch to diff against
+  BRANCH    branch to diff against
+  CALLBACK  callback to run
 
 OPTIONS
-  -h, --help  show CLI help
+  -c, --comma  split folder paths by comma
+  -h, --help   show CLI help
+  -s, --space  split folder paths by space
 
 EXAMPLE
   $ test-packager branch
 ```
 
-_See code: [src/commands/callback.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.0/src/commands/callback.ts)_
+_See code: [src/commands/callback.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.2/src/commands/callback.ts)_
 
 ## `test-packager diff BRANCH`
 
@@ -79,7 +78,7 @@ EXAMPLE
   $ test-packager branch
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.0/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.2/src/commands/diff.ts)_
 
 ## `test-packager help [COMMAND]`
 
@@ -97,5 +96,4 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
-
 <!-- commandsstop -->
