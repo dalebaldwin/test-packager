@@ -2,7 +2,7 @@
 
 =============
 
-Package up tests based on git diff
+Package up your tests based on changes in your project. This tool will find the folders with changes and allows you to pass that information into your test commands to narrow down tests to only the ones that relate to your changes.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/test-packager.svg)](https://npmjs.org/package/test-packager)
