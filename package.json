@@ -1,7 +1,7 @@
 {
   "name": "test-packager",
   "description": "Package up tests based on git diff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Dale Baldwin @dalebaldwin",
   "bin": {
     "test-packager": "./bin/run"
@@ -24,6 +24,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "globby": "^10",
     "prettier": "^2.2.1",
+    "shelljs": "^0.8.4",
     "ts-node": "^8",
     "typescript": "^3.3"
   },
