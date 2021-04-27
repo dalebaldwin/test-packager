@@ -28,12 +28,33 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`test-packager callback BRANCH`](#test-packager-callback-branch)
 * [`test-packager diff BRANCH`](#test-packager-diff-branch)
 * [`test-packager help [COMMAND]`](#test-packager-help-command)
 
+## `test-packager callback BRANCH`
+
+Get folder change list and pass in values to a callback
+
+```
+USAGE
+  $ test-packager callback BRANCH
+
+ARGUMENTS
+  BRANCH  [default: main] branch to diff against
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ test-packager branch
+```
+
+_See code: [src/commands/callback.ts](https://github.com/dalebaldwin/test-packager/blob/v0.0.0/src/commands/callback.ts)_
+
 ## `test-packager diff BRANCH`
 
-Git the git diff between this branch and the target branch
+Get the git diff between this branch and the target branch
 
 ```
 USAGE
