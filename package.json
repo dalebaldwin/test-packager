@@ -1,7 +1,7 @@
 {
   "name": "test-packager",
   "description": "Package up tests based on git diff",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Dale Baldwin @dalebaldwin",
   "bin": {
     "test-packager": "./bin/run"
